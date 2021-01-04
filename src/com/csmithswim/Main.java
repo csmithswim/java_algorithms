@@ -8,13 +8,9 @@ import java.util.regex.*;
 
 public class Main {
 
-    /*
-     * Complete the simpleArraySum function below.
-     */
+
     static int simpleArraySum(int[] ar) {
-        /*
-         * Write your code here.
-         */
+
 
     }
 
