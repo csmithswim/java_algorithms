@@ -11,7 +11,8 @@ public class Main {
 
     static int simpleArraySum(int[] ar) {
 
-
+int sum=0;
+        return sum;
 
     }
 
