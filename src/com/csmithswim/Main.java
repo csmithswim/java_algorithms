@@ -6,12 +6,20 @@ import java.text.*;
 import java.util.*;
 import java.util.regex.*;
 
-public class Main {
+class Main {
 
-
+    /*
+     * Complete the simpleArraySum function below.
+     */
     static int simpleArraySum(int[] ar) {
-
-int sum=0;
+        /*
+         * Write your code here.
+         */
+        int sum = 0;
+        for (int element : ar) {
+            sum += element;
+        }
+        System.out.println(sum);
         return sum;
 
     }
