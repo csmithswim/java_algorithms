@@ -12,6 +12,7 @@ public class Main {
     static int simpleArraySum(int[] ar) {
 
 
+
     }
 
     private static final Scanner scanner = new Scanner(System.in);
