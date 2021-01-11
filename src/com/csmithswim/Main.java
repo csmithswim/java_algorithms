@@ -1,50 +1,45 @@
-package com.csmithswim;
-
 import java.io.*;
 import java.math.*;
+import java.security.*;
 import java.text.*;
 import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
 import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
-class Main {
+public class Main {
 
-    /*
-     * Complete the simpleArraySum function below.
-     */
-    static int simpleArraySum(int[] ar) {
-        /*
-         * Write your code here.
-         */
-        int sum = 0;
-        for (int element : ar) {
-            sum += element;
-        }
-        System.out.println(sum);
-        return sum;
+    // Complete the compareTriplets function below.
+    static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+
 
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int arCount = Integer.parseInt(scanner.nextLine().trim());
+        List<Integer> a = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                .map(Integer::parseInt)
+                .collect(toList());
 
-        int[] ar = new int[arCount];
+        List<Integer> b = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                .map(Integer::parseInt)
+                .collect(toList());
 
-        String[] arItems = scanner.nextLine().split(" ");
+        List<Integer> result = compareTriplets(a, b);
 
-        for (int arItr = 0; arItr < arCount; arItr++) {
-            int arItem = Integer.parseInt(arItems[arItr].trim());
-            ar[arItr] = arItem;
-        }
+        bufferedWriter.write(
+                result.stream()
+                        .map(Object::toString)
+                        .collect(joining(" "))
+                        + "\n"
+        );
 
-        int result = simpleArraySum(ar);
-
-        bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
-
+        bufferedReader.close();
         bufferedWriter.close();
     }
 }
