@@ -22,10 +22,14 @@ public class ModuloTimeCalculator {
     }
 
     static void convertMinutes(int hours, int minutes, int minutesPassed, boolean standard){
+        String time;
         int finalHours = hours  + (minutesPassed/60);
         int finalMinutes = (minutesPassed+minutes)%60;
         if (standard==true){
-            System.out.println(finalHours%12+":"+finalMinutes);
+            if (finalHours>12){
+                time = " PM";
+            } else time = " AM";
+            System.out.println(finalHours%12+":"+finalMinutes+time);
         }
         else System.out.println(finalHours+":"+finalMinutes);
     }
